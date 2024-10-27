@@ -18,7 +18,7 @@ public class NewSelection {
 
     public static void main(String[] args) {
 
-        Comic comic = new Comic("Spider man");
+        Comic comic = new Comic("Spider man", 21);
         Fiction fiction = new Fiction("Alice story", FictionType.Tragedy);
         TextBook textBook = new TextBook("Physics");
 

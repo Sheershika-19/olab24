@@ -18,4 +18,9 @@ public class Fiction extends Book {
 	public FictionType getType() {
 		return type;
 	}
+
+	@Override
+	public String toString() {
+		return "Fiction{" + " Name: " + name + " Type: " + type + " }";
+	}
 }

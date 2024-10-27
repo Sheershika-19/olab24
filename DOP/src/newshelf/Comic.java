@@ -1,3 +1,4 @@
 package newshelf;
 
-public record Comic(String title) implements IBook {}
+public record Comic(String title, int ageOfMainCharacter) implements IBook {
+}

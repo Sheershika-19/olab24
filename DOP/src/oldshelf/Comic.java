@@ -39,12 +39,9 @@ public class Comic extends Book {
 	public boolean equals(Object o) {
 		if (this == o)
 			return true;
-		if (o == null || getClass() != o.getClass())
+		if (!(o instanceof Comic))
 			return false;
-
 		Comic comic = (Comic) o;
-		if (ageOfMainCharacter != comic.ageOfMainCharacter)
-			return false;
-		return Title != null ? Title.equals(comic.Title) : comic.Title == null;
+		return ageOfMainCharacter == comic.ageOfMainCharacter && Title.equals(comic.Title);
 	}
 }
