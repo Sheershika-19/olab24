@@ -1,6 +1,6 @@
 package generics;
 
-public  class Fiction<T> implements IBook<T> {
+public final class Fiction<T> implements IBook<T> {
     private final String name;
     private final FictionType type;
 
@@ -11,6 +11,6 @@ public  class Fiction<T> implements IBook<T> {
 
     @Override
     public T getAgeorTitle() {
-        return (T) (name);
+        return (T) name;  
     }
 }

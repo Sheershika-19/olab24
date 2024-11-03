@@ -1,6 +1,6 @@
 package generics;
 
-public class TextBook<T> implements IBook<T> {
+public final class TextBook<T> implements IBook<T> {
     private final String subject;
 
     public TextBook(String subject) {
@@ -9,6 +9,6 @@ public class TextBook<T> implements IBook<T> {
 
     @Override
     public T getAgeorTitle() {
-        return (T) (subject);
+        return (T) subject;  
     }
 }

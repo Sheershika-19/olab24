@@ -45,7 +45,7 @@ public class NewSelection {
         System.out.println(getAgeOrTitle(comic));
         System.out.println(getAgeOrTitle(fiction));
         System.out.println(getAgeOrTitle(textBook));
-
+        
         //if returned value is other than 0 then objects are not equal
 
         Comic comic2=new Comic("Super man",20);

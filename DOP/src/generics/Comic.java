@@ -1,6 +1,6 @@
 package generics;
 
-public  class Comic<T> implements IBook<T> {
+public final class Comic<T> implements IBook<T> {
     private final String title;
     private final int ageOfMainCharacter;
 
@@ -11,6 +11,6 @@ public  class Comic<T> implements IBook<T> {
 
     @Override
     public T getAgeorTitle() {
-        return (T) (title);
+        return (T) title;  
     }
 }
