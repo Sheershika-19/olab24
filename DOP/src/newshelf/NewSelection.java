@@ -1,9 +1,11 @@
 package newshelf;
 
+import oldshelf.Book;
+
 public class NewSelection {
 
     public static String getAgeOrTitle(Object o) {
-
+      /* 
         if (o instanceof IBook) {
             if (o instanceof Comic comic) {
                 return comic.title();
@@ -14,6 +16,24 @@ public class NewSelection {
             }
         }
         return null;
+
+        type switches
+        return switch (o) {
+            case Comic comic when !comic.title().isEmpty() -> comic.title();
+            case Fiction fiction when !fiction.name().isEmpty() -> fiction.name();
+            case TextBook textBook when !textBook.subject().isEmpty() -> textBook.subject();
+            case Book book -> "Unknown Book Type";
+            default -> "";
+        };*/
+
+        //Record patterns with type switches
+        return switch (o) {
+            case Comic(String title, int ageOfMainCharacter) when !title.isEmpty() -> title;
+            case Fiction(String name, FictionType type) when !name.isEmpty() -> name;
+            case TextBook(String subject) when !subject.isEmpty() -> subject;
+            case Book book -> "Unknown Book Type";
+            default -> "";
+        };
     }
 
     public static void main(String[] args) {
@@ -25,6 +45,9 @@ public class NewSelection {
         System.out.println(getAgeOrTitle(comic));
         System.out.println(getAgeOrTitle(fiction));
         System.out.println(getAgeOrTitle(textBook));
+
+        Comic comic2=new Comic("Super man",20);
+        System.out.println(comic.compareTo(comic2));
 
     }
 }

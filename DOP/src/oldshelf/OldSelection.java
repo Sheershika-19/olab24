@@ -3,7 +3,7 @@ package oldshelf;
 public class OldSelection {
 
 	public static String getAgeOrTitle(Object o) {
-		if (o instanceof Book) {
+		/*if (o instanceof Book) {
 			if(o instanceof Comic){
 				Comic comic=(Comic) o;
 				return comic.getTitle();
@@ -17,7 +17,17 @@ public class OldSelection {
 				return tb.getSubject();
 			}
 		}
-		return null;
+		return null;*/
+		
+
+		//using switch 
+
+		return switch (o) {
+			case Comic comic -> comic.getTitle();
+			case Fiction fiction -> fiction.getName();
+			case TextBook textBook -> textBook.getSubject();
+			default -> "";
+		};
 	}
 
 	public static void main(String[] args) {
