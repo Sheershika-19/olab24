@@ -6,8 +6,8 @@ public class Generics {
         IBook<String> fiction = new Fiction<>("Alice", FictionType.Tragedy);
         IBook<String> textBook = new TextBook<>("Physics");
 
-        System.out.println(comic.getAgeorTitle());
-        System.out.println(fiction.getAgeorTitle());
-        System.out.println(textBook.getAgeorTitle());
+        System.out.println(comic.getTitleOrSubject());
+        System.out.println(fiction.getTitleOrSubject());
+        System.out.println(textBook.getTitleOrSubject());
     }
 }

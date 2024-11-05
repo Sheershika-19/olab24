@@ -1,14 +1,16 @@
 package generics;
 
-public final class TextBook<T> implements IBook<T> {
-    private final String subject;
-
-    public TextBook(String subject) {
-        this.subject = subject;
+public record TextBook<T extends Comparable<T>>(T subject) implements IBook<T> {
+    @Override
+    public T getTitleOrSubject() {
+        return subject;
     }
 
     @Override
-    public T getAgeorTitle() {
-        return (T) subject;  
+    public int compareTo(IBook<T> other) {
+        if (other instanceof TextBook<T> otherTextBook) {
+            return this.subject.compareTo(otherTextBook.subject);
+        }
+        return 0; 
     }
 }

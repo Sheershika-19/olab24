@@ -1,16 +1,16 @@
 package generics;
 
-public final class Fiction<T> implements IBook<T> {
-    private final String name;
-    private final FictionType type;
-
-    public Fiction(String name, FictionType type) {
-        this.name = name;
-        this.type = type;
+public record Fiction<T extends Comparable<T>>(T title, FictionType type) implements IBook<T> {
+    @Override
+    public T getTitleOrSubject() {
+        return title;
     }
 
     @Override
-    public T getAgeorTitle() {
-        return (T) name;  
+    public int compareTo(IBook<T> other) {
+        if (other instanceof Fiction<T> otherFiction) {
+            return this.title.compareTo(otherFiction.title);
+        }
+        return 0; 
     }
 }

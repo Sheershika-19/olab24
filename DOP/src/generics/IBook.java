@@ -1,5 +1,5 @@
 package generics;
 
-public interface  IBook<T> {
-    T getAgeorTitle();
+public sealed interface IBook<T> extends Comparable<IBook<T>> permits Comic, Fiction, TextBook {
+    T getTitleOrSubject();
 }
